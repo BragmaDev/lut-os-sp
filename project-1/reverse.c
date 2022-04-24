@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Used source:
+// https://riptutorial.com/c/example/8274/get-lines-from-a-file-using-getline--
 
 typedef struct line {
     char *ptr;
