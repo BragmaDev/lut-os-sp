@@ -1,4 +1,4 @@
-### Project 1:
+## Project 1:
 
 reverse.c: Prints out a file's lines in reverse order.
 The "line" struct is used for creating a linked list of lines.
@@ -8,7 +8,7 @@ The "print_output" function goes through the linked list and prints the lines to
 
 <br>
 
-### Project 2:
+## Project 2:
 
 my-cat.c: print out contents in file(s)
 For each argument, opens the corresponding file, reads every line with "fgets" and prints them.
@@ -30,7 +30,7 @@ and attempts to read the next number.
 
 <br>
 
-### Project 4:
+## Project 4:
 
 Xv6 operating system with an added system call "getreadcount" to get the number of times a certain system call (default: read) has been used.
 
@@ -38,4 +38,9 @@ Also adds a new program "getrc.c" that prints out the counter's value. It can be
 value is not 0. The second argument changes the system call which is being counted if its value is a valid system call number (1-22).
 
 The "proc" structure has an added int variable "readcount". The global counter is a variable in "syscall.c" which is copied into the current process' 
-readcount variable when "getrc" is used. This done so that the counter's value can be returned by the system call by using "myproc()->readcount".   
+readcount variable when "getrc" is used. This is done so that the counter's value can be returned by the system call by using "myproc()->readcount".   
+
+### How to compile:
+1. install qemu
+2. use command "chmod u+rwx -R xv6-readcounter/" inside the "project-4" folder
+3. use command "make qemu" inside the "xv6-readcounter/" folder
