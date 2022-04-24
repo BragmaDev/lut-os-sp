@@ -13,6 +13,8 @@
 // library system call function. The saved user %esp points
 // to a saved program counter, and then the first argument.
 
+// Used source:
+// https://gist.github.com/bridgesign/e932115f1d58c7e763e6e443500c6561
 int readcount = 0, sysnum = 5;
 
 // Fetch the int at addr from the current process.
@@ -140,12 +142,12 @@ syscall(void)
   struct proc *curproc = myproc();
 
   num = curproc->tf->eax;
-  if (num == sysnum) {                   // SYS_read
+  if (num == sysnum) {
   	readcount++;                    // Increment counter
   }
-  if (num == 22) {                  // SYS_getreadcount
-    argint(0, &reset);
-    argint(1, &temp);
+  if (num == SYS_getreadcount) {
+    argint(0, &reset);              // Get the reset argument
+    argint(1, &temp);               // Get the syscall number argument
     if (reset == 1) {
         readcount = 0;              // Reset counter
     }
